@@ -19,6 +19,19 @@ description: Run GALBA for protein-only eukaryotic gene prediction using close-r
 - **Upstream evidence**:
   - Soft-masked assembly (`.fasta`). See `./repeat-annotation/SKILL.md`.
   - High-quality proteomes from **close relatives** (`.faa`), not a broad OrthoDB clade.
+- **Acquiring close-relative proteomes (optional route)** — if the user has no proteomes on hand, fetch
+  RefSeq reference proteomes of 3–5 sister species with the [biodb-fetch](https://github.com/cheahhl814/biodb-fetch)
+  skill (md5/size-verified, cached in its content-addressed store under the `manifest.tsv` contract):
+
+  ```bash
+  # Deployed at your agent's skills directory as biodb-fetch; one GCA/GCF accession per relative:
+  python3 ~/.agents/skills/biodb-fetch/scripts/ncbi_datasets.py genome \
+      --accession GCF_013365055.1 --include protein --outdir work/proteomes
+  # → work/proteomes contains the RefSeq protein.faa + manifest.tsv row (contract v2)
+  ```
+
+  Degradation path: if biodb-fetch is not deployed or is offline, proceed with user-supplied `.faa`
+  files — this route is convenience caching, not a hard dependency.
 - **Assembly QC**: BUSCO (genome mode), N50, contamination check passed.
 
 ## Installation

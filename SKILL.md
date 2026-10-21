@@ -23,6 +23,7 @@ requires:
   - "Pixi environment (env managed via this skill's pixi.toml; use skills/pixi-skill for env management procedures)"
   - "Soft-masked genome assembly (produced by Phase 1 if not already done)"
   - "RNA-seq reads and/or close-relative proteomes (optional but strongly recommended)"
+  - "biodb-fetch skill (https://github.com/cheahhl814/biodb-fetch — OPTIONAL soft dep: fetches close-relative RefSeq proteomes for protein-evidence gene prediction; degrade gracefully to user-supplied .faa when not deployed/offline)"
 ---
 
 # Genome Annotation Pipeline
@@ -71,14 +72,24 @@ A 6-phase pipeline that takes you from "I have a genome assembly" to a fully ann
 | Pixi environment                  | See `skills/pixi-skill/SKILL.md` | All        |
 | Genome assembly (`.fa`)           | User-supplied                       | Phase 0    |
 | RNA-seq reads (`.fq.gz`)          | Optional but recommended            | Phase 2    |
-| Close-relative proteomes (`.faa`) | Optional                            | Phase 2    |
-| OrthoDB clade partition           | Download from OrthoDB               | Phase 2    |
-| Rfam CM library                   | Download from Rfam                  | Phase 3    |
-| eggNOG DB (~44 GB)                | `download_eggnog_data.py`           | Phase 4    |
-| InterProScan DB                   | Download separately                 | Phase 4    |
-| BUSCO/compleasm lineage dataset   | `odb10` / `odb12`                   | Phase 0, 5 |
+| Close-relative proteomes (`.faa`) | Optional; via [biodb-fetch](https://github.com/cheahhl814/biodb-fetch) (NCBI Datasets → RefSeq proteomes) or user-supplied | Phase 2    |
+| OrthoDB clade partition           | Download from OrthoDB (bulk partition FASTA — biodb-fetch does NOT cover this; its orthologs tooling is per-gene lookups) | Phase 2    |
+| Rfam CM library                   | Download from Rfam (biodb-fetch does not cover Rfam; grab `Rfam.cm` + `Rfam.clanin` from the EBI FTP) | Phase 3    |
+| eggNOG DB (~44 GB)                | `download_eggnog_data.py` (tool-canonical; biodb-fetch deliberately out of scope) | Phase 4    |
+| InterProScan DB                   | Download separately (tool-canonical) | Phase 4    |
+| BUSCO/compleasm lineage dataset   | `odb10` / `odb12` (busco's own `--download`) | Phase 0, 5 |
 
 > **Fallback paths:** Phases 2–5 each have evidence-variant paths. If you lack RNA-seq, use protein-only or DL modes. If you lack both, Helixer/Tiberius can run ab initio on well-represented clades (see decision tree).
+>
+> **Database acquisition routing (who downloads what):** most annotation DBs are **tool-canonical
+> downloads** — eggNOG via `download_eggnog_data.py`, BUSCO lineages via busco's `--download`,
+> InterProScan via its setup script, Rfam via the EBI FTP (the [biodb-fetch](https://github.com/cheahhl814/biodb-fetch)
+> skill's 8 retrieval domains do not cover these bulk tool DBs, and its per-gene ortholog REST
+> tooling is not a substitute for the bulk OrthoDB clade partition BRAKER3 needs). The one fit:
+> **close-relative proteomes** — fetch RefSeq reference proteomes of sister species through
+> biodb-fetch's NCBI Datasets wrapper (md5-verified, store-cached, `manifest.tsv` contract v2);
+> see `galba-pipeline/SKILL.md` §Prerequisites for the command. Optional route — degrade to
+> user-supplied `.faa` when biodb-fetch is unavailable.
 
 ## Procedure
 
@@ -261,6 +272,7 @@ nextflow run runners/nextflow-runner/main.nf \
 - [runners/nextflow-runner/SKILL.md](./runners/nextflow-runner/SKILL.md) — Nextflow workflow for reproducible execution
 - `skills/pixi-skill/SKILL.md` — Environment management
 - `skills/rna-seq-skills/read-mapping-alignment/SKILL.md` — Splice-aware RNA-seq alignment (upstream)
+- biodb-fetch (https://github.com/cheahhl814/biodb-fetch) — OPTIONAL: close-relative RefSeq proteome retrieval (protein-evidence Phase 2); not a hard dependency
 - `skills/nf-skill/SKILL.md` — Nextflow DSL2 conventions and patterns
 - ortholog-inference (planned, not yet in @skills/) — OrthoFinder HOGs (downstream)
 - gene-family-evolution (planned, not yet in @skills/) — GO enrichment on expanded/contracted families (downstream)
