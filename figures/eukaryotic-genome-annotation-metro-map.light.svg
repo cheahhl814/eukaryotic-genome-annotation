@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="Genome annotation pipeline metro map: assembly QC gate, repeat masking, three gene-prediction routes re-merging, then ncRNA, functional annotation and QC" width="800" height="450">
+  <title>Genome annotation pipeline metro map</title>
+  <g>
+  <rect x="16" y="70" width="276" height="230" rx="14" style="fill:#f4f5f7;stroke:#e2e8f0;stroke-width:1.5"/>
+  <circle cx="27" cy="53" r="11" style="fill:#0f172a"/>
+  <text x="27" y="57.5" text-anchor="middle" style="font-family:Outfit, Inter, Segoe UI, Helvetica, Arial, sans-serif;font-size:13px;font-weight:700;fill:#ffffff">1</text>
+  <text x="46" y="57.5" text-anchor="start" style="font-family:Outfit, Inter, Segoe UI, Helvetica, Arial, sans-serif;font-size:13px;font-weight:600;fill:#0f172a">Input &amp; repeat masking</text>
+  <rect x="302" y="70" width="296" height="230" rx="14" style="fill:#f4f5f7;stroke:#e2e8f0;stroke-width:1.5"/>
+  <circle cx="313" cy="53" r="11" style="fill:#0f172a"/>
+  <text x="313" y="57.5" text-anchor="middle" style="font-family:Outfit, Inter, Segoe UI, Helvetica, Arial, sans-serif;font-size:13px;font-weight:700;fill:#ffffff">2</text>
+  <text x="332" y="57.5" text-anchor="start" style="font-family:Outfit, Inter, Segoe UI, Helvetica, Arial, sans-serif;font-size:13px;font-weight:600;fill:#0f172a">Gene prediction — evidence routing</text>
+  <rect x="608" y="70" width="176" height="360" rx="14" style="fill:#f4f5f7;stroke:#e2e8f0;stroke-width:1.5"/>
+  <circle cx="619" cy="53" r="11" style="fill:#0f172a"/>
+  <text x="619" y="57.5" text-anchor="middle" style="font-family:Outfit, Inter, Segoe UI, Helvetica, Arial, sans-serif;font-size:13px;font-weight:700;fill:#ffffff">3</text>
+  <text x="638" y="57.5" text-anchor="start" style="font-family:Outfit, Inter, Segoe UI, Helvetica, Arial, sans-serif;font-size:13px;font-weight:600;fill:#0f172a">ncRNA · functional · QC</text>
+  </g>
+  <g>
+  <path d="M 608 174 C 630 174 634 128 656 128 H 719" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="2 7" style="stroke:#10b981;stroke-width:5"/>
+  <path d="M 640 210 H 660 Q 672 210 672 222 V 250 Q 672 262 660 262 H 640" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="2 7" style="stroke:#10b981;stroke-width:5"/>
+  </g>
+  <g>
+  <path d="M 76 174 H 152 C 170 174 170 122 188 122 H 196 C 214 122 214 174 232 174 H 628 A 18 18 0 0 1 646 192 V 354" fill="none" stroke-linecap="round" stroke-linejoin="round" style="stroke:#0d9488;stroke-width:4"/>
+  <path d="M 76 180 H 152 C 170 180 170 226 188 226 H 196 C 214 226 214 180 232 180 H 322 C 342 180 342 120 362 120 H 506 C 526 120 526 180 546 180 H 628 A 12 12 0 0 1 640 192 V 354" fill="none" stroke-linecap="round" stroke-linejoin="round" style="stroke:#f59e0b;stroke-width:4"/>
+  <path d="M 76 186 H 152 C 170 186 170 232 188 232 H 196 C 214 232 214 186 232 186 H 322 C 342 186 342 240 362 240 H 506 C 526 240 526 186 546 186 H 628 A 6 6 0 0 1 634 192 V 354" fill="none" stroke-linecap="round" stroke-linejoin="round" style="stroke:#ef4444;stroke-width:4"/>
+  </g>
+  <g>
+  <path d="M 30 158 H 52 L 62 168 V 198 H 30 Z" transform="translate(4 5)" style="fill:#0f172a;fill-opacity:0.22;stroke:#0f172a;stroke-opacity:0.45;stroke-width:1.5"/>
+  <path d="M 30 158 H 52 L 62 168 V 198 H 30 Z" stroke-linejoin="round" style="fill:#ffffff;stroke:#0f172a;stroke-width:2"/>
+  <path d="M 52 158 V 168 H 62" fill="none" stroke-linejoin="round" style="stroke:#0f172a;stroke-width:2"/>
+  <rect x="24.5" y="173" width="43" height="15" rx="3" style="fill:#0f172a"/>
+  <text x="46" y="184" text-anchor="middle" style="font-family:Outfit, Inter, Segoe UI, Helvetica, Arial, sans-serif;font-size:10px;font-weight:700;fill:#ffffff">FASTA</text>
+  <rect x="69" y="167" width="6" height="26" rx="1.5" style="fill:#0f172a"/>
+  <path d="M 248 112 H 270 L 280 122 V 152 H 248 Z" transform="translate(4 5)" style="fill:#0f172a;fill-opacity:0.22;stroke:#0f172a;stroke-opacity:0.45;stroke-width:1.5"/>
+  <path d="M 248 112 H 270 L 280 122 V 152 H 248 Z" stroke-linejoin="round" style="fill:#ffffff;stroke:#0f172a;stroke-width:2"/>
+  <path d="M 270 112 V 122 H 280" fill="none" stroke-linejoin="round" style="stroke:#0f172a;stroke-width:2"/>
+  <rect x="239" y="127" width="50" height="15" rx="3" style="fill:#0f172a"/>
+  <text x="264" y="138" text-anchor="middle" style="font-family:Outfit, Inter, Segoe UI, Helvetica, Arial, sans-serif;font-size:10px;font-weight:700;fill:#ffffff">MASKED</text>
+  <path d="M 544 204 H 566 L 576 214 V 244 H 544 Z" transform="translate(4 5)" style="fill:#0f172a;fill-opacity:0.22;stroke:#0f172a;stroke-opacity:0.45;stroke-width:1.5"/>
+  <path d="M 544 204 H 566 L 576 214 V 244 H 544 Z" stroke-linejoin="round" style="fill:#ffffff;stroke:#0f172a;stroke-width:2"/>
+  <path d="M 566 204 V 214 H 576" fill="none" stroke-linejoin="round" style="stroke:#0f172a;stroke-width:2"/>
+  <rect x="528.5" y="219" width="63" height="15" rx="3" style="fill:#0f172a"/>
+  <text x="560" y="230" text-anchor="middle" style="font-family:Outfit, Inter, Segoe UI, Helvetica, Arial, sans-serif;font-size:10px;font-weight:700;fill:#ffffff">GFF3+FAA</text>
+  <rect x="719" y="115" width="6" height="26" rx="1.5" style="fill:#0f172a"/>
+  <path d="M 736 108 H 758 L 768 118 V 148 H 736 Z" transform="translate(4 5)" style="fill:#0f172a;fill-opacity:0.22;stroke:#0f172a;stroke-opacity:0.45;stroke-width:1.5"/>
+  <path d="M 736 108 H 758 L 768 118 V 148 H 736 Z" stroke-linejoin="round" style="fill:#ffffff;stroke:#0f172a;stroke-width:2"/>
+  <path d="M 758 108 V 118 H 768" fill="none" stroke-linejoin="round" style="stroke:#0f172a;stroke-width:2"/>
+  <rect x="724" y="123" width="56" height="15" rx="3" style="fill:#0f172a"/>
+  <text x="752" y="134" text-anchor="middle" style="font-family:Outfit, Inter, Segoe UI, Helvetica, Arial, sans-serif;font-size:10px;font-weight:700;fill:#ffffff">GAF/TSV</text>
+  <rect x="624" y="354" width="32" height="6" rx="1.5" style="fill:#0f172a"/>
+  <path d="M 624 372 H 646 L 656 382 V 412 H 624 Z" transform="translate(4 5)" style="fill:#0f172a;fill-opacity:0.22;stroke:#0f172a;stroke-opacity:0.45;stroke-width:1.5"/>
+  <path d="M 624 372 H 646 L 656 382 V 412 H 624 Z" stroke-linejoin="round" style="fill:#ffffff;stroke:#0f172a;stroke-width:2"/>
+  <path d="M 646 372 V 382 H 656" fill="none" stroke-linejoin="round" style="stroke:#0f172a;stroke-width:2"/>
+  <rect x="615" y="387" width="50" height="15" rx="3" style="fill:#0f172a"/>
+  <text x="640" y="398" text-anchor="middle" style="font-family:Outfit, Inter, Segoe UI, Helvetica, Arial, sans-serif;font-size:10px;font-weight:700;fill:#ffffff">REPORT</text>
+  </g>
+  <g>
+  <rect x="113" y="165" width="10" height="30" rx="5" style="fill:#ffffff;stroke:#0f172a;stroke-width:2"/>
+  <rect x="187" y="112" width="10" height="20" rx="5" style="fill:#ffffff;stroke:#0f172a;stroke-width:2"/>
+  <rect x="187" y="217" width="10" height="24" rx="5" style="fill:#ffffff;stroke:#0f172a;stroke-width:2"/>
+  <circle cx="382" cy="174" r="6" style="fill:#ffffff;stroke:#0f172a;stroke-width:2.5"/>
+  <circle cx="436" cy="174" r="6" style="fill:#ffffff;stroke:#0f172a;stroke-width:2.5"/>
+  <rect x="471" y="164" width="10" height="20" rx="5" style="fill:#ffffff;stroke:#0f172a;stroke-width:2"/>
+  <circle cx="410" cy="120" r="6" style="fill:#ffffff;stroke:#0f172a;stroke-width:2.5"/>
+  <rect x="471" y="110" width="10" height="20" rx="5" style="fill:#ffffff;stroke:#0f172a;stroke-width:2"/>
+  <circle cx="410" cy="240" r="6" style="fill:#ffffff;stroke:#0f172a;stroke-width:2.5"/>
+  <rect x="471" y="230" width="10" height="20" rx="5" style="fill:#ffffff;stroke:#0f172a;stroke-width:2"/>
+  <rect x="660" y="227" width="24" height="10" rx="5" style="fill:#ffffff;stroke:#0f172a;stroke-width:2"/>
+  <rect x="660" y="243" width="24" height="10" rx="5" style="fill:#ffffff;stroke:#0f172a;stroke-width:2"/>
+  <rect x="667" y="118" width="10" height="20" rx="5" style="fill:#ffffff;stroke:#0f172a;stroke-width:2"/>
+  <rect x="626" y="283" width="28" height="10" rx="5" style="fill:#ffffff;stroke:#0f172a;stroke-width:2"/>
+  <circle cx="640" cy="314" r="9" style="fill:#ffffff;stroke:#0f172a;stroke-width:2.5"/>
+  <circle cx="640" cy="338" r="9" style="fill:#ffffff;stroke:#0f172a;stroke-width:2.5"/>
+  </g>
+  <g>
+  <text x="118" y="155" text-anchor="middle" style="font-family:Outfit, Inter, Segoe UI, Helvetica, Arial, sans-serif;font-size:12px;font-weight:600;fill:#0f172a">Phase 0 QC gate</text>
+  <text x="118" y="212" text-anchor="middle" style="font-family:Inter, Segoe UI, Helvetica, Arial, sans-serif;font-size:11px;font-weight:400;fill:#64748b">BUSCO ≥90%</text>
+  <text x="118" y="225" text-anchor="middle" style="font-family:Inter, Segoe UI, Helvetica, Arial, sans-serif;font-size:11px;font-weight:400;fill:#64748b">contam. &lt;5%</text>
+  <text x="118" y="241" text-anchor="middle" style="font-family:Inter, Segoe UI, Helvetica, Arial, sans-serif;font-size:11px;font-weight:400;fill:#ef4444">fails → fix assembly</text>
+  <text x="192" y="103" text-anchor="middle" style="font-family:Outfit, Inter, Segoe UI, Helvetica, Arial, sans-serif;font-size:12px;font-weight:600;fill:#0f172a">EarlGrey</text>
+  <text x="192" y="263" text-anchor="middle" style="font-family:Outfit, Inter, Segoe UI, Helvetica, Arial, sans-serif;font-size:12px;font-weight:600;fill:#0f172a">RepeatModeler2</text>
+  <text x="192" y="276" text-anchor="middle" style="font-family:Outfit, Inter, Segoe UI, Helvetica, Arial, sans-serif;font-size:12px;font-weight:600;fill:#0f172a">→ RepeatMasker</text>
+  <text x="46" y="222" text-anchor="middle" style="font-family:Inter, Segoe UI, Helvetica, Arial, sans-serif;font-size:11px;font-weight:400;fill:#64748b">assembly.fa</text>
+  <text x="288" y="167" text-anchor="end" style="font-family:Inter, Segoe UI, Helvetica, Arial, sans-serif;font-size:11px;font-weight:400;fill:#64748b">soft-masked</text>
+  <text x="382" y="160" text-anchor="middle" style="font-family:Outfit, Inter, Segoe UI, Helvetica, Arial, sans-serif;font-size:12px;font-weight:600;fill:#0f172a">HISAT2+sort</text>
+  <text x="436" y="196" text-anchor="middle" style="font-family:Outfit, Inter, Segoe UI, Helvetica, Arial, sans-serif;font-size:12px;font-weight:600;fill:#0f172a">OrthoDB</text>
+  <text x="476" y="160" text-anchor="middle" style="font-family:Outfit, Inter, Segoe UI, Helvetica, Arial, sans-serif;font-size:12px;font-weight:600;fill:#0f172a">BRAKER3 full</text>
+  <text x="410" y="106" text-anchor="middle" style="font-family:Outfit, Inter, Segoe UI, Helvetica, Arial, sans-serif;font-size:12px;font-weight:600;fill:#0f172a">miniprot</text>
+  <text x="476" y="106" text-anchor="middle" style="font-family:Outfit, Inter, Segoe UI, Helvetica, Arial, sans-serif;font-size:12px;font-weight:600;fill:#0f172a">GALBA</text>
+  <text x="410" y="262" text-anchor="middle" style="font-family:Outfit, Inter, Segoe UI, Helvetica, Arial, sans-serif;font-size:12px;font-weight:600;fill:#0f172a">4-step fungal</text>
+  <text x="476" y="226" text-anchor="middle" style="font-family:Outfit, Inter, Segoe UI, Helvetica, Arial, sans-serif;font-size:12px;font-weight:600;fill:#0f172a">Funannotate</text>
+  <text x="562" y="262" text-anchor="middle" style="font-family:Inter, Segoe UI, Helvetica, Arial, sans-serif;font-size:11px;font-weight:400;fill:#64748b">gene models</text>
+  <text x="562" y="275" text-anchor="middle" style="font-family:Inter, Segoe UI, Helvetica, Arial, sans-serif;font-size:11px;font-weight:400;fill:#64748b">+ proteins</text>
+  <text x="690" y="100" text-anchor="middle" style="font-family:Outfit, Inter, Segoe UI, Helvetica, Arial, sans-serif;font-size:12px;font-weight:600;fill:#0f172a">eggNOG + InterProScan</text>
+  <text x="780" y="166" text-anchor="end" style="font-family:Inter, Segoe UI, Helvetica, Arial, sans-serif;font-size:11px;font-weight:400;fill:#64748b">functional (skippable)</text>
+  <text x="660" y="204" text-anchor="start" style="font-family:Inter, Segoe UI, Helvetica, Arial, sans-serif;font-size:11px;font-weight:400;fill:#64748b">ncRNA (skippable)</text>
+  <text x="690" y="236" text-anchor="start"  style="font-family:Outfit, Inter, Segoe UI, Helvetica, Arial, sans-serif;font-size:11px;font-weight:600;fill:#0f172a">cmscan --cut_ga</text>
+  <text x="690" y="252" text-anchor="start" style="font-family:Outfit, Inter, Segoe UI, Helvetica, Arial, sans-serif;font-size:11px;font-weight:600;fill:#0f172a">tRNAscan-SE</text>
+  <text x="664" y="287" text-anchor="start" style="font-family:Outfit, Inter, Segoe UI, Helvetica, Arial, sans-serif;font-size:12px;font-weight:600;fill:#0f172a">BUSCO genome</text>
+  <text x="664" y="300" text-anchor="start" style="font-family:Outfit, Inter, Segoe UI, Helvetica, Arial, sans-serif;font-size:12px;font-weight:600;fill:#0f172a">vs proteome</text>
+  <text x="664" y="318" text-anchor="start" style="font-family:Outfit, Inter, Segoe UI, Helvetica, Arial, sans-serif;font-size:12px;font-weight:600;fill:#0f172a">OMArk</text>
+  <text x="664" y="342" text-anchor="start" style="font-family:Outfit, Inter, Segoe UI, Helvetica, Arial, sans-serif;font-size:12px;font-weight:600;fill:#0f172a">sanity panel</text>
+  <text x="664" y="357" text-anchor="start" style="font-family:Inter, Segoe UI, Helvetica, Arial, sans-serif;font-size:11px;font-weight:400;fill:#64748b">annotation QC</text>
+  <text x="676" y="396" text-anchor="start" style="font-family:Inter, Segoe UI, Helvetica, Arial, sans-serif;font-size:11px;font-weight:400;fill:#64748b">QC report (.md)</text>
+  </g>
+  <g>
+  <text x="312" y="328" text-anchor="start" letter-spacing="1.2" style="font-family:Outfit, Inter, Segoe UI, Helvetica, Arial, sans-serif;font-size:11px;font-weight:700;fill:#64748b">ROUTES</text>
+  <path d="M 314 346 H 342" fill="none" stroke-linecap="round" stroke-linejoin="round" style="stroke:#0d9488;stroke-width:4"/>
+  <text x="352" y="350" text-anchor="start" style="font-family:Inter, Segoe UI, Helvetica, Arial, sans-serif;font-size:12px;font-weight:400;fill:#0f172a">BRAKER3 full evidence (default)</text>
+  <path d="M 314 366 H 342" fill="none" stroke-linecap="round" stroke-linejoin="round" style="stroke:#f59e0b;stroke-width:4"/>
+  <text x="352" y="370" text-anchor="start" style="font-family:Inter, Segoe UI, Helvetica, Arial, sans-serif;font-size:12px;font-weight:400;fill:#0f172a">GALBA / protein-only</text>
+  <path d="M 314 386 H 342" fill="none" stroke-linecap="round" stroke-linejoin="round" style="stroke:#ef4444;stroke-width:4"/>
+  <text x="352" y="390" text-anchor="start" style="font-family:Inter, Segoe UI, Helvetica, Arial, sans-serif;font-size:12px;font-weight:400;fill:#0f172a">Funannotate / fungal</text>
+  <path d="M 314 406 H 342" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="2 7" style="stroke:#10b981;stroke-width:5"/>
+  <text x="352" y="410" text-anchor="start" style="font-family:Inter, Segoe UI, Helvetica, Arial, sans-serif;font-size:12px;font-weight:400;fill:#0f172a">optional: ncRNA + functional spurs</text>
+  </g>
+</svg>
