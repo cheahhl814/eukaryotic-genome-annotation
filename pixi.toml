@@ -1,0 +1,62 @@
+[workspace]
+name = "genome-annotation-pipeline"
+version = "1.0.0"
+description = ""
+channels = ["conda-forge", "bioconda"]
+platforms = ["linux-64"]  # single-platform: many bioconda tools (earlgrey etc.) have no osx builds
+
+[dependencies]
+# Every tool here was confirmed via `pixi search` during preflight (status: found in params.json).
+busco = "*"
+compleasm = "*"
+earlgrey = "*"
+repeatmodeler = "*"
+repeatmasker = "*"
+braker3 = "*"
+funannotate = "*"
+infernal = "*"
+trnascan-se = "*"
+barrnap = "*"
+eggnog-mapper = "*"
+interproscan = "*"
+purge_dups = "*"
+hisat2 = "*"
+samtools = "*"
+stringtie = "*"
+gffread = "*"
+miniprot = "*"
+diamond = "*"
+augustus = "*"
+
+# GALBA (galba.pl) is NOT a conda package — status not_found at preflight (SP8).
+# Install route: the Gaius-Augustus/GALBA release (galba.pl; AUGUSTUS + DIAMOND
+# + miniprot wrappers). The conda `augustus`, `miniprot`, and `diamond` entries
+# above provide its main dependencies; fetch galba.pl itself from
+# https://github.com/Gaius-Augustus/GALBA and put it on PATH.
+
+# Helixer is NOT a conda package and has NO PyPI distribution — preflight SP8
+# pip-route invalidated at battle-test (pixi lock could not resolve 'helixer').
+# Verified install routes from docs-corpus/helixer/github-readme.md:
+#   1. Docker/Singularity (recommended): https://github.com/gglyptodon/helixer-docker
+#   2. Manual install (Linux only):      docs/manual_install.md in usadellab/Helixer
+# The no-evidence ab-initio route of the decision tree shells out to the
+# Helixer.py driver; ensure it is on PATH (manual install) or run the
+# container image when reaching that route.
+
+
+# CheckM (validation) crashes on Python >=3.12 with setuptools >=81:
+# "ModuleNotFoundError: No module named 'pkg_resources'" (pkg_resources was
+# removed from setuptools in 81). Pin setuptools until checkm-genome is
+# updated upstream to not depend on pkg_resources.
+# setuptools = "<81"  # uncomment if CheckM is used (in CheckM's feature table if it is isolated)
+
+[tasks]
+# Common workflows as pixi tasks
+preflight = "echo 'Starting preflight workflow...'"
+run = "echo 'Starting main workflow...'"
+qc = "echo 'Starting QC workflow...'"
+debug = "echo 'Starting debug workflow...'"
+battle-test = "echo 'Starting battle-test workflow...'"
+# Self-check: compares this skill's git SHA to upstream (github.com/cheahhl814/genome-annotation-pipeline).
+# See bin/skill-update-check.py for the verdict legend (UP-TO-DATE / BEHIND-BY-N / OFFLINE).
+update-check = "python3 bin/skill-update-check.py"

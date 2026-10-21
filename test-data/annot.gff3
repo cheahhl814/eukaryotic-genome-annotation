@@ -1,0 +1,5 @@
+##gff-version 3
+##sequence-region seq1 1 300
+seq1	fixture	gene	21	260	.	+	.	ID=gene1;Name=fix1
+seq1	fixture	mRNA	21	260	.	+	.	ID=mrna1;Parent=gene1
+seq1	fixture	exon	21	260	.	+	.	ID=exon1;Parent=mrna1

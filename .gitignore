@@ -1,0 +1,33 @@
+# Python artifacts
+__pycache__/
+*.pyc
+*.egg-info/
+
+# OS / editor
+.DS_Store
+*.swp
+*~
+
+# Pixi env cache + lockfile (resolved on first run, regenerated per machine)
+/.pixi/
+pixi.lock
+
+# Per-run working outputs — must not be committed
+work/
+results/
+.nextflow/
+.nextflow.log*
+
+# Docs-corpus fetch cache (regenerable via skill-update-check)
+docs-corpus/.fingerprints
+
+# Meta-skill run artifacts (per-run, regenerable by re-running skill-forge)
+# — NOT part of the skill's operational deliverable; never commit them to GitHub.
+# params.json IS tracked (it is the render input that makes a re-run reproducible).
+skill-built.md
+battle-test-report.md
+battle-test_evidence.txt
+preflight.md
+preflight_evidence.txt
+tool_search_results.txt
+tool-inventory.json

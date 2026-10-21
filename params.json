@@ -1,0 +1,207 @@
+{
+  "skill_name": "genome-annotation-pipeline",
+  "skill_title": "Genome Annotation Pipeline (Eukaryotic)",
+  "skill_description": "End-to-end eukaryotic genome annotation pipeline: soft-mask repeats, predict protein-coding genes (BRAKER3/GALBA/Funannotate), annotate ncRNAs, assign functional labels, and QC the result. Routes through a decision tree to select the optimal tool per evidence type and clade.",
+  "skill_version": "1.0.0",
+  "skill_updated": "2026-10-21",
+  "skill_triggers": [
+    "annotate genome",
+    "genome annotation",
+    "predict genes",
+    "BRAKER3",
+    "Funannotate",
+    "GALBA",
+    "repeat annotation",
+    "functional annotation",
+    "ncRNA annotation",
+    "gene prediction",
+    "eukaryotic genome annotation",
+    "annotate my genome",
+    "soft-mask repeats",
+    "GO KEGG Pfam annotation",
+    "annotation QC"
+  ],
+  "run_dir": "skills/genome-annotation-pipeline",
+  "skills_root": "/home/cheahhl814/claude_workspace/bioinformatics/AIx-BIO/skills",
+  "github_org": "cheahhl814",
+  "github_repo": "github.com/cheahhl814/genome-annotation-pipeline",
+  "skill_shape": "meta-skill-multi-subskill",
+  "profile": "bioinfo",
+  "sub_skills": [
+    "repeat-annotation",
+    "gene-prediction-decision-tree",
+    "braker3-pipeline",
+    "galba-pipeline",
+    "funannotate-pipeline",
+    "ncrna-annotation",
+    "functional-annotation",
+    "annotation-qc",
+    "runners/nextflow-runner"
+  ],
+  "tool_inventory": [
+    {
+      "name": "busco",
+      "version": "*",
+      "role": "qc-completeness",
+      "status": "found"
+    },
+    {
+      "name": "compleasm",
+      "version": "*",
+      "role": "qc-completeness",
+      "status": "found"
+    },
+    {
+      "name": "earlgrey",
+      "version": "*",
+      "role": "repeat-discovery-masking",
+      "status": "found"
+    },
+    {
+      "name": "repeatmodeler",
+      "version": "*",
+      "role": "repeat-discovery",
+      "status": "found"
+    },
+    {
+      "name": "repeatmasker",
+      "version": "*",
+      "role": "repeat-masking",
+      "status": "found"
+    },
+    {
+      "name": "braker3",
+      "version": "*",
+      "role": "gene-prediction",
+      "status": "found",
+      "note": "requires GeneMark-ES/ET license key (GM_KEY) accepted for non-commercial use"
+    },
+    {
+      "name": "galba",
+      "version": "*",
+      "role": "gene-prediction-protein",
+      "status": "not_found",
+      "install_route": "GitHub Gaius-Augustus/GALBA (galba.pl); Snakemake+Singularity rewrite is GALBA2 \u2014 user-ratified 2026-09-23 in annotation-suite preflight; wrapper deps only in pixi.toml"
+    },
+    {
+      "name": "funannotate",
+      "version": "*",
+      "role": "gene-prediction-fungi",
+      "status": "found"
+    },
+    {
+      "name": "infernal",
+      "version": "*",
+      "role": "ncrna-cmscan",
+      "status": "found"
+    },
+    {
+      "name": "trnascan-se",
+      "version": "*",
+      "role": "ncrna-trna",
+      "status": "found"
+    },
+    {
+      "name": "barrnap",
+      "version": "*",
+      "role": "ncrna-rrna",
+      "status": "found"
+    },
+    {
+      "name": "eggnog-mapper",
+      "version": "*",
+      "role": "functional-orthology",
+      "status": "found"
+    },
+    {
+      "name": "interproscan",
+      "version": "*",
+      "role": "functional-domains",
+      "status": "found"
+    },
+    {
+      "name": "helixer",
+      "version": "*",
+      "role": "gene-prediction-abinitio",
+      "status": "not_found",
+      "install_route": "no conda package and no PyPI distribution \u2014 SP8 pip route invalidated at battle-test; verified routes: Docker/Singularity (gglyptodon/helixer-docker, recommended) or manual Linux install (usadellab/Helixer docs/manual_install.md)",
+      "note": "used only by the no-evidence ab-initio route of the decision tree"
+    },
+    {
+      "name": "purge_dups",
+      "version": "*",
+      "role": "haplotig-purge",
+      "status": "found"
+    },
+    {
+      "name": "hisat2",
+      "version": "*",
+      "role": "rnaseq-aligner",
+      "status": "found"
+    },
+    {
+      "name": "samtools",
+      "version": "*",
+      "role": "utility",
+      "status": "found"
+    },
+    {
+      "name": "stringtie",
+      "version": "*",
+      "role": "rnaseq-transcript",
+      "status": "found"
+    },
+    {
+      "name": "gffread",
+      "version": "*",
+      "role": "utility",
+      "status": "found"
+    },
+    {
+      "name": "miniprot",
+      "version": "*",
+      "role": "protein-alignment",
+      "status": "found"
+    },
+    {
+      "name": "diamond",
+      "version": "*",
+      "role": "protein-search",
+      "status": "found"
+    },
+    {
+      "name": "augustus",
+      "version": "*",
+      "role": "predictor-backend",
+      "status": "found"
+    }
+  ],
+  "pixi_channels": [
+    "conda-forge",
+    "bioconda"
+  ],
+  "pixi_available": true,
+  "git_initialized": false,
+  "disk_gb_free": 61,
+  "target_tiers": [
+    "large"
+  ],
+  "input_formats": [
+    "fasta",
+    "fastq"
+  ],
+  "with_nextflow_runner": true,
+  "nextflow_runner": {
+    "single_sample_mode": "yes",
+    "cohort_mode": "yes",
+    "ci_test_command": "nextflow run runners/nextflow-runner/main.nf -profile test -stub-run",
+    "note": "complete pipeline arrived in-zip under workflow/ and was restructured to runners/nextflow-runner/ per user decision 2026-10-21"
+  },
+  "verdict": "GO-WITH-WARNINGS",
+  "warnings": [
+    "galba is not conda-packaged (status not_found) \u2014 install route documented, pixi.toml carries wrapper deps only (augustus, miniprot, diamond)",
+    "helixer has no conda package and NO PyPI distribution \u2014 SP8 pip route invalidated at battle-test; container/manual install route documented",
+    "braker3 requires a GeneMark license key (GM_KEY) at runtime \u2014 documented in README and SKILL.md"
+  ],
+  "generated": "2026-10-21T12:45:00+08:00"
+}
