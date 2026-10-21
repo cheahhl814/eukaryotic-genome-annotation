@@ -44,11 +44,11 @@ Almost every label on a new genome is *transferred* by homology from a small isl
 | Metagenome / MAG | eggNOG `--itype metagenome` + KofamScan | Built-in gene calling; KEGG modules |
 | Twilight-zone / ORFan | DeepGOPlus or Foldseek → DeepFRI | Only handle homology-free fraction; low-confidence |
 | CAZymes / BGCs / AMR | → dbCAN / antiSMASH / AMRFinderPlus | Generic Pfam gives no substrate/phenotype |
-| GO enrichment downstream | → `skills/gene-family-evolution/SKILL.md` §7 | Mind IEA circularity (see Pitfalls below) |
+| GO enrichment downstream | → gene-family-evolution §7 (planned — not yet in @skills/) | Mind IEA circularity (see Pitfalls below) |
 
 ## Prerequisites
 
-- **Environment**: Active Pixi environment. Refer to `skills/pixi-env-mgmt/SKILL.md`.
+- **Environment**: Active Pixi environment. Refer to `skills/pixi-skill/SKILL.md`.
 - **Input**: Protein FASTA from `./braker3-pipeline/SKILL.md` or `./funannotate-pipeline/SKILL.md`.
 - **Compute**: eggNOG DB ~44 GB; InterProScan Java bundle tens of GB.
 
@@ -134,7 +134,7 @@ Use AGAT to graft results onto GFF3. For GO deliverables use GAF (carries eviden
 **Symptom:** "Protein kinase" label on catalytically dead pseudokinase. **Fix:** A domain implies a capability, not the substrate or activity. Demote specificity as identity/coverage fall.
 
 ### GO IEA circularity in enrichment
-**Symptom:** Enrichment results "too clean" — testing the pipeline against itself. **Fix:** Match background to foreground pipeline; prefer non-IEA where possible; pin GO release; caveat results. See `skills/gene-family-evolution/SKILL.md` §7.
+**Symptom:** Enrichment results "too clean" — testing the pipeline against itself. **Fix:** Match background to foreground pipeline; prefer non-IEA where possible; pin GO release; caveat results. See gene-family-evolution §7 (planned skill, not yet in @skills/).
 
 ### Over-specific transfer
 **Symptom:** Exact substrate/EC copied onto distant relative in mechanistically-diverse superfamily. **Fix:** Demote to superfamily / partial EC (`1.1.1.-`); record identity and coverage.
@@ -171,8 +171,8 @@ Use AGAT to graft results onto GFF3. For GO deliverables use GAF (carries eviden
 - `./braker3-pipeline/SKILL.md` — Produces the protein FASTA to annotate
 - `./funannotate-pipeline/SKILL.md` — Fungal annotation producing input proteins
 - `./annotation-qc/SKILL.md` — Sanity-check annotation coverage before functional work
-- `skills/gene-family-evolution/SKILL.md` — §7 uses GO/KEGG from this skill for enrichment of expanded/contracted families
-- `skills/ortholog-inference/SKILL.md` — OrthoFinder HOGs contextualize which orthologs are being annotated
+- gene-family-evolution — §7 uses GO/KEGG from this skill for enrichment of expanded/contracted families (planned; NOT yet present in @skills/, do not resolve)
+- ortholog-inference — OrthoFinder HOGs contextualize which orthologs are being annotated (planned; NOT yet present in @skills/, do not resolve)
 
 ## References
 

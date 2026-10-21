@@ -50,7 +50,7 @@ ncRNA homology is **structure-conserved, not sequence-conserved**. A G-C pair ca
 
 ## Prerequisites
 
-- **Environment**: Active Pixi environment. Refer to `skills/pixi-env-mgmt/SKILL.md`.
+- **Environment**: Active Pixi environment. Refer to `skills/pixi-skill/SKILL.md`.
 - **Input**: Assembled genome (`.fa`) or transcriptome for lncRNA.
 - **Databases**: Rfam covariance model library (`.cm`), pre-pressed with `cmpress`.
 

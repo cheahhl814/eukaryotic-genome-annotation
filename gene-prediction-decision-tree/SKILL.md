@@ -62,7 +62,7 @@ OrthoDB rule: BRAKER3 wants a **clade partition** (smallest containing target cl
 
 ## Prerequisites
 
-- **Environment**: Active Pixi environment. Refer to `skills/pixi-env-mgmt/SKILL.md`.
+- **Environment**: Active Pixi environment. Refer to `skills/pixi-skill/SKILL.md`.
 - **Mandatory prerequisite**: Soft-masked assembly. See `./repeat-annotation/SKILL.md`.
 - **Assembly QC**: BUSCO (genome mode), N50, contamination check via FCS-GX/BlobTools.
 

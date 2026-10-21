@@ -17,10 +17,10 @@ description: Run BRAKER3 for eukaryotic gene prediction. Supports RNA-seq + prot
 
 ## Prerequisites
 
-- **Environment**: Active Pixi environment. Refer to `skills/pixi-env-mgmt/SKILL.md`.
+- **Environment**: Active Pixi environment. Refer to `skills/pixi-skill/SKILL.md`.
 - **Upstream evidence** (provide at least one):
   - Soft-masked assembly (`.fasta`). See `./repeat-annotation/SKILL.md`.
-  - RNA-seq reads (`.fq.gz`) or sorted BAM from `skills/read-mapping-alignment/SKILL.md` — optional but improves accuracy.
+  - RNA-seq reads (`.fq.gz`) or sorted BAM from `skills/rna-seq-skills/read-mapping-alignment/SKILL.md` — optional but improves accuracy.
   - OrthoDB protein partition (`.fa`) for the smallest clade containing target species — required for protein modes.
 - **Assembly QC**: BUSCO (genome mode), N50, contamination check passed.
 
@@ -176,7 +176,7 @@ braker.pl \
 
 - `./gene-prediction-decision-tree/SKILL.md` — Router: choose the right tool
 - `./repeat-annotation/SKILL.md` — PREREQUISITE: soft-mask assembly
-- `skills/read-mapping-alignment/SKILL.md` — Splice-aware RNA-seq alignment
+- `skills/rna-seq-skills/read-mapping-alignment/SKILL.md` — Splice-aware RNA-seq alignment
 - `./annotation-qc/SKILL.md` — Assess annotation quality post-prediction
 - `./galba-pipeline/SKILL.md` — Protein-only alternative (close relatives)
 

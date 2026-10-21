@@ -20,7 +20,7 @@ triggers:
   - "GO KEGG Pfam annotation"
   - "annotation QC"
 requires:
-  - "Pixi environment (see pixi-env-mgmt)"
+  - "Pixi environment (env managed via this skill's pixi.toml; use skills/pixi-skill for env management procedures)"
   - "Soft-masked genome assembly (produced by Phase 1 if not already done)"
   - "RNA-seq reads and/or close-relative proteomes (optional but strongly recommended)"
 ---
@@ -68,7 +68,7 @@ A 6-phase pipeline that takes you from "I have a genome assembly" to a fully ann
 
 | Requirement                       | Install                             | Phase      |
 | --------------------------------- | ----------------------------------- | ---------- |
-| Pixi environment                  | See `skills/pixi-env-mgmt/SKILL.md` | All        |
+| Pixi environment                  | See `skills/pixi-skill/SKILL.md` | All        |
 | Genome assembly (`.fa`)           | User-supplied                       | Phase 0    |
 | RNA-seq reads (`.fq.gz`)          | Optional but recommended            | Phase 2    |
 | Close-relative proteomes (`.faa`) | Optional                            | Phase 2    |
@@ -259,8 +259,8 @@ nextflow run runners/nextflow-runner/main.nf \
 - [functional-annotation](./functional-annotation/SKILL.md) — Phase 4: GO/KEGG/Pfam/EC
 - [annotation-qc](./annotation-qc/SKILL.md) — Phase 5: quality control
 - [runners/nextflow-runner/SKILL.md](./runners/nextflow-runner/SKILL.md) — Nextflow workflow for reproducible execution
-- `skills/pixi-env-mgmt/SKILL.md` — Environment management
-- `skills/read-mapping-alignment/SKILL.md` — Splice-aware RNA-seq alignment (upstream)
-- `skills/nextflow-pipelines/SKILL.md` — Nextflow DSL2 conventions and patterns
-- `skills/ortholog-inference/SKILL.md` — OrthoFinder HOGs (downstream)
-- `skills/gene-family-evolution/SKILL.md` — GO enrichment on expanded/contracted families (downstream)
+- `skills/pixi-skill/SKILL.md` — Environment management
+- `skills/rna-seq-skills/read-mapping-alignment/SKILL.md` — Splice-aware RNA-seq alignment (upstream)
+- `skills/nf-skill/SKILL.md` — Nextflow DSL2 conventions and patterns
+- ortholog-inference (planned, not yet in @skills/) — OrthoFinder HOGs (downstream)
+- gene-family-evolution (planned, not yet in @skills/) — GO enrichment on expanded/contracted families (downstream)

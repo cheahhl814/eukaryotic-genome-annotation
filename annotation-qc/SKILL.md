@@ -48,7 +48,7 @@ BUSCO completeness measures recovery of the ~1,000–5,500 most conserved single
 
 ## Prerequisites
 
-- **Environment**: Active Pixi environment. Refer to `skills/pixi-env-mgmt/SKILL.md`.
+- **Environment**: Active Pixi environment. Refer to `skills/pixi-skill/SKILL.md`.
 - **Input**: Predicted proteins (`.faa`) and/or genome assembly (`.fa`), annotation GFF3.
 - **Databases**: BUSCO/compleasm lineage dataset (e.g. `vertebrata_odb10` or `odb12`), OMArk LUCA database.
 

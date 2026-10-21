@@ -15,7 +15,7 @@ description: Run Funannotate for fungal genome annotation. Covers masking, train
 
 ## Prerequisites
 
-- **Environment**: Active Pixi environment. Refer to `skills/pixi-env-mgmt/SKILL.md`.
+- **Environment**: Active Pixi environment. Refer to `skills/pixi-skill/SKILL.md`.
 - **Upstream evidence**:
   - Assembled genome (`.fa`). Funannotate handles masking internally but soft-masking is preferred upstream.
   - RNA-seq reads (`.fq.gz`) or transcript evidence (`.fa`) — optional but strongly recommended.

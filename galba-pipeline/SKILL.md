@@ -15,7 +15,7 @@ description: Run GALBA for protein-only eukaryotic gene prediction using close-r
 
 ## Prerequisites
 
-- **Environment**: Active Pixi environment. Refer to `skills/pixi-env-mgmt/SKILL.md`.
+- **Environment**: Active Pixi environment. Refer to `skills/pixi-skill/SKILL.md`.
 - **Upstream evidence**:
   - Soft-masked assembly (`.fasta`). See `./repeat-annotation/SKILL.md`.
   - High-quality proteomes from **close relatives** (`.faa`), not a broad OrthoDB clade.

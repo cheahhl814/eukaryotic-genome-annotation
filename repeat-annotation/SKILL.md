@@ -46,7 +46,7 @@ Two load-bearing truths the masker hides:
 
 ## Prerequisites
 
-- **Environment**: Active Pixi environment. Refer to `skills/pixi-env-mgmt/SKILL.md`.
+- **Environment**: Active Pixi environment. Refer to `skills/pixi-skill/SKILL.md`.
 - **Input**: Assembled genome (`.fa`). Assembly quality caps TE annotation (short-read = systematic undercount).
 
 ## Installation
@@ -235,7 +235,7 @@ Young high-copy TE families produce reads that map equally to hundreds of near-i
 - `./gene-prediction-decision-tree/SKILL.md` — Receives the soft-masked genome
 - `./braker3-pipeline/SKILL.md` — Gene prediction requires soft-masked input
 - `./annotation-qc/SKILL.md` — LAI and repeat-content sanity checks
-- `skills/differential-expression-analysis/SKILL.md` — Differential TE expression from TEtranscripts counts
+- `skills/rna-seq-skills/differential-expression-analysis/` — Differential TE expression from TEtranscripts counts (sub-skill of the rna-seq-skills meta-skill)
 
 ## References
 
