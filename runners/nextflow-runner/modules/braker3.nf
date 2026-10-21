@@ -11,8 +11,8 @@ process BRAKER3 {
 
     input:
     path genome
-    path rnaseq_bam                       // empty if no RNA-seq
-    path orthodb                           // empty if no protein evidence
+    tuple val(has_bam), path(bam)          // placeholder BAM + has_bam=false when no RNA-seq
+    tuple val(has_prot), path(orthodb)     // placeholder FASTA + has_prot=false when no OrthoDB
     val  species
     val  mode                              // 'full' | 'protein_only' | 'rnaseq_only'
 
@@ -24,9 +24,11 @@ process BRAKER3 {
 
 
     script:
-    // Mode-specific flags
-    def prot_flag  = mode != 'rnaseq_only' ? "--prot_seq ${orthodb}" : ''
-    def bam_flag   = mode != 'protein_only' && rnaseq_bam ? "--bam ${rnaseq_bam}" : ''
+    // Mode-specific flags — gated on the evidence flags (Channel.empty() as an
+    // optional-input placeholder ZEROES the cross-product: the process would
+    // never fire. main.nf passes tuple(bool, file) packs instead.)
+    def prot_flag  = (has_prot && mode != 'rnaseq_only') ? "--prot_seq=${orthodb}" : ''
+    def bam_flag   = (has_bam && mode != 'protein_only') ? "--bam=${bam}" : ''
 
     """
     # Strip special characters from FASTA headers (common BRAKER failure)

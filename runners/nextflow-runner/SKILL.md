@@ -53,11 +53,19 @@ nextflow run main.nf -resume -profile singularity,slurm
 
 | `--mode`          | Gene predictor                   | Required inputs                     |
 | ----------------- | -------------------------------- | ----------------------------------- |
-| `braker3`         | BRAKER3 full (RNA-seq + protein) | `--genome`, `--rnaseq`, `--orthodb` |
+| `braker3`         | BRAKER3 full (RNA-seq + protein) | `--genome`, `--rnaseq`+`--hisat2_index_prefix` (or `--rnaseq_bam`), `--orthodb` (optional `--skip_ncrna`/`--skip_functional` with their DBs) |
 | `braker3_protein` | BRAKER3 protein-only             | `--genome`, `--orthodb`             |
-| `braker3_rnaseq`  | BRAKER3 RNA-seq-only             | `--genome`, `--rnaseq`              |
+| `braker3_rnaseq`  | BRAKER3 RNA-seq-only             | `--genome`, `--rnaseq`+`--hisat2_index_prefix`, or `--rnaseq_bam` |
 | `galba`           | GALBA (close-relative proteins)  | `--genome`, `--prot_seq`            |
 | `funannotate`     | Funannotate (fungal)             | `--genome`, `--rnaseq` (optional)   |
+
+> [!NOTE]
+> **BRAKER3 takes a sorted BAM, not FASTQs.** Raw RNA-seq FASTQs are aligned through the
+> built-in `HISAT2_ALIGN → SAMTOOLS_SORT` stage (`modules/rnaseq_align.nf`; containers
+> verified on quay.io biocontainers) before BRAKER3's `--bam`. Have a pre-aligned BAM?
+> Pass `--rnaseq_bam` and the alignment stage is skipped. The GALBA protein-evidence route
+> can borrow pre-made reference proteomes from the biodb-fetch skill (see the skill root's
+> `galba-pipeline/SKILL.md` §Prerequisites).
 
 ## Phase Control
 

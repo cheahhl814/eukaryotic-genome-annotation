@@ -32,14 +32,14 @@ process FUNANNOTATE_TRAIN {
 
     input:
     path masked_genome
-    path reads                             // paired-end reads or empty
+    tuple val(has_reads), path(reads)      // placeholder + false when no RNA-seq
 
     output:
     path "funannotate_train", emit: outdir
 
 
     script:
-    def reads_flag = reads ? "-l ${reads[0]} -r ${reads[1]}" : ''
+    def reads_flag = has_reads ? "-l ${reads[0]} -r ${reads[1]}" : ''
 
     """
     funannotate train \\
@@ -63,8 +63,8 @@ process FUNANNOTATE_PREDICT {
     input:
     path train_outdir
     val  species
-    path reads
-    path prot_seq
+    tuple val(has_reads), path(reads)
+    tuple val(has_prot), path(prot)
 
     output:
     path "funannotate_predict", emit: outdir
@@ -72,7 +72,7 @@ process FUNANNOTATE_PREDICT {
 
     script:
     def trans_flag  = file("${train_outdir}/transcripts.fa").exists() ? "--transcript_evidence ${train_outdir}/transcripts.fa" : ''
-    def prot_flag   = prot_seq ? "--protein_evidence ${prot_seq}" : ''
+    def prot_flag   = has_prot ? "--protein_evidence ${prot}" : ''
 
     """
     funannotate predict \\

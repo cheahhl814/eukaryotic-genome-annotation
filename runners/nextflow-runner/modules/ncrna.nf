@@ -18,9 +18,9 @@ process INFERNAL_CMSCAN {
 
 
     script:
-    // Rfam database: auto-cmpress if needed
-    def rfam_cm = params.rfam_cm ?: 'Rfam.cm'
-    def rfam_clanin = params.rfam_clanin ?: 'Rfam.clanin'
+    // Rfam database: main.nf validation guarantees --rfam_cm when ncRNA runs
+    def rfam_cm = params.rfam_cm
+    def clan_flag = params.rfam_clanin ? "--clanin ${params.rfam_clanin}" : ''
     """
     # Calculate database size for run-comparable E-values
     RESIDUES=\$(grep -v '>' ${genome} | tr -d '\\n' | wc -c)
@@ -35,7 +35,7 @@ process INFERNAL_CMSCAN {
     cmscan -Z \${ZVAL} \\
         --cut_ga --rfam --nohmmonly \\
         --tblout ncrna.tblout --fmt 2 \\
-        --clanin ${rfam_clanin} \\
+        ${clan_flag} \\
         ${rfam_cm} \\
         ${genome} > ncrna.cmscan
 
