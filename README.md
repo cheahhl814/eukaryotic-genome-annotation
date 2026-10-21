@@ -4,9 +4,9 @@
 [![Type](https://img.shields.io/badge/type-agent%20skill-blueviolet)](#-installation)
 [![Built with](https://img.shields.io/badge/built%20with-bioinfo--skill--creator-orange)](https://github.com/cheahhl814/skill-forge)
 
-End-to-end eukaryotic genome annotation pipeline: soft-mask repeats, predict protein-coding genes (BRAKER3/GALBA/Funannotate), annotate ncRNAs, assign functional labels, and QC the result. Routes through a decision tree to select the optimal tool per evidence type and clade.
+End-to-end eukaryotic genome annotation pipeline (nuclear genomes of fungi, plants, and animals; organelle genomes are out of scope — see mitotree-agent). Soft-mask repeats, predict protein-coding genes (BRAKER3/GALBA/Funannotate), annotate ncRNAs, assign functional labels, and QC the result. Routes through a decision tree to select the optimal tool per evidence type and clade, and ships a Nextflow DSL2 runner (runners/nextflow-runner/) for reproducible unattended execution.
 
-**Repository**: https://github.com/cheahhl814/genome-annotation-pipeline
+**Repository**: https://github.com/cheahhl814/eukaryotic-genome-annotation
 
 > [!NOTE]
 > Current version: **v1.0.0** (updated 2026-10-21).
@@ -30,8 +30,8 @@ This is an **agent skill**, not a user-facing library. The recommended install p
 **Option A — give your agent this prompt (recommended):**
 
 ```text
-Install the genome-annotation-pipeline skill from
-https://github.com/cheahhl814/genome-annotation-pipeline —
+Install the eukaryotic-genome-annotation skill from
+https://github.com/cheahhl814/eukaryotic-genome-annotation —
 clone it into your agent's skills directory (the path your agent watches
 for skills) and run `pixi install` from that directory. Then read the
 skill's SKILL.md to understand its phases and the Input/Output contract
@@ -41,8 +41,8 @@ for each. Confirm when the environment is ready.
 **Option B — manual install:**
 
 ```bash
-git clone https://github.com/cheahhl814/genome-annotation-pipeline.git
-cd genome-annotation-pipeline
+git clone https://github.com/cheahhl814/eukaryotic-genome-annotation.git
+cd eukaryotic-genome-annotation
 pixi install
 ```
 > [!TIP]
@@ -147,7 +147,7 @@ pixi run update-check
 ## 📁 Repository layout
 
 ```text
-genome-annotation-pipeline/
+eukaryotic-genome-annotation/
 ├── SKILL.md                 # Master orchestrator (router — start here)
 ├── README.md                # This file
 ├── pixi.toml                # Pinned tool environment (pixi install)

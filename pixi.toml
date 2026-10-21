@@ -1,5 +1,5 @@
 [workspace]
-name = "genome-annotation-pipeline"
+name = "eukaryotic-genome-annotation"
 version = "1.0.0"
 description = ""
 channels = ["conda-forge", "bioconda"]
@@ -57,6 +57,6 @@ run = "echo 'Starting main workflow...'"
 qc = "echo 'Starting QC workflow...'"
 debug = "echo 'Starting debug workflow...'"
 battle-test = "echo 'Starting battle-test workflow...'"
-# Self-check: compares this skill's git SHA to upstream (github.com/cheahhl814/genome-annotation-pipeline).
+# Self-check: compares this skill's git SHA to upstream (github.com/cheahhl814/eukaryotic-genome-annotation).
 # See bin/skill-update-check.py for the verdict legend (UP-TO-DATE / BEHIND-BY-N / OFFLINE).
 update-check = "python3 bin/skill-update-check.py"

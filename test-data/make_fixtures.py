@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""genome-annotation-pipeline test fixtures (v1.0.0).
+"""eukaryotic-genome-annotation test fixtures (v1.0.0).
 
 Writes tiny deterministic input fixtures + MANIFEST.tsv into <outdir>.
 Consumed by battle-test check #12 (data fixtures + execution canary).

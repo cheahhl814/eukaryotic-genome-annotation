@@ -1,7 +1,7 @@
 {
-  "skill_name": "genome-annotation-pipeline",
+  "skill_name": "eukaryotic-genome-annotation",
   "skill_title": "Genome Annotation Pipeline (Eukaryotic)",
-  "skill_description": "End-to-end eukaryotic genome annotation pipeline: soft-mask repeats, predict protein-coding genes (BRAKER3/GALBA/Funannotate), annotate ncRNAs, assign functional labels, and QC the result. Routes through a decision tree to select the optimal tool per evidence type and clade.",
+  "skill_description": "End-to-end eukaryotic genome annotation (nuclear genomes of fungi, plants, and animals; organelle genomes are out of scope — see mitotree-agent): soft-mask repeats, predict protein-coding genes (BRAKER3/GALBA/Funannotate), annotate ncRNAs, assign functional labels, and QC the result. Routes through a decision tree to select the optimal tool per evidence type and clade; ships a Nextflow DSL2 runner (runners/nextflow-runner/) for reproducible unattended execution."
   "skill_version": "1.0.0",
   "skill_updated": "2026-10-21",
   "skill_triggers": [
@@ -21,10 +21,10 @@
     "GO KEGG Pfam annotation",
     "annotation QC"
   ],
-  "run_dir": "skills/genome-annotation-pipeline",
+  "run_dir": "skills/eukaryotic-genome-annotation",
   "skills_root": "/home/cheahhl814/claude_workspace/bioinformatics/AIx-BIO/skills",
   "github_org": "cheahhl814",
-  "github_repo": "github.com/cheahhl814/genome-annotation-pipeline",
+  "github_repo": "github.com/cheahhl814/eukaryotic-genome-annotation",
   "skill_shape": "meta-skill-multi-subskill",
   "profile": "bioinfo",
   "sub_skills": [

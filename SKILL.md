@@ -1,6 +1,6 @@
 ---
-name: "genome-annotation-pipeline"
-description: "End-to-end eukaryotic genome annotation pipeline: soft-mask repeats, predict protein-coding genes (BRAKER3/GALBA/Funannotate), annotate ncRNAs, assign functional labels, and QC the result. Routes through a decision tree to select the optimal tool per evidence type and clade."
+name: "eukaryotic-genome-annotation"
+description: "End-to-end eukaryotic genome annotation (nuclear genomes of fungi, plants, and animals; organelle genomes are out of scope — see mitotree-agent): soft-mask repeats, predict protein-coding genes (BRAKER3/GALBA/Funannotate), annotate ncRNAs, assign functional labels, and QC the result. Routes through a decision tree to select the optimal tool per evidence type and clade; ships a Nextflow DSL2 runner (runners/nextflow-runner/) for reproducible unattended execution."
 version: 2
 updated: "2026-06-29"
 triggers:

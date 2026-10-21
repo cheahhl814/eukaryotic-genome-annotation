@@ -1,5 +1,5 @@
 ---
-name: "genome-annotation-pipeline/nextflow-runner"
+name: "eukaryotic-genome-annotation/nextflow-runner"
 description: "Nextflow DSL2 workflow for the genome annotation pipeline. Handles reproducible, containerized execution of repeat masking, gene prediction, ncRNA annotation, functional annotation, and QC. The agentic skills handle routing, interpretation, and failure recovery; this workflow handles unattended execution."
 version: 2
 triggers:
